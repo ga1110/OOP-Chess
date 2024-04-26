@@ -24,7 +24,7 @@ public:
 
     virtual int Turn(int new_x, int new_y) = 0;
     friend ostream& operator<<(ostream& out, ChessPiece& piece) {
-        out << "Имя фигруы: " << piece.Name << " цвет: " << piece.Color << " находится на клетке:" << "(" << piece.x_pos << "," << piece.y_pos << ")" << endl;
+        out << "Имя фигруы: " << piece.Name << " \nЦвет: " << piece.Color << "\nНаходится на клетке:" << "(" << piece.x_pos << "," << piece.y_pos << ")" << endl;
         return out;
     }
 };
@@ -46,9 +46,7 @@ public:
             y_pos = new_y;
             return 1;
         }
-        else {
-            return 0;
-        }
+        return 0;
     }
 };
 const string Bishop::BishopName = "Слон";
@@ -70,9 +68,7 @@ public:
             y_pos = new_y;
             return 1;
         }
-        else {
-            return 0;
-        }
+        return 0;
     }
 };
 const string Rook::RookName = "Ладья";
@@ -88,15 +84,10 @@ public:
     }
 
     virtual int Turn(int new_x, int new_y) {
-        if (Bishop::Turn(new_x, new_y) == 1) {
+        if (Bishop::Turn(new_x, new_y) == 1 || Rook::Turn(new_x, new_y) == 1) {
             return 1;
         }
-        else if (Rook::Turn(new_x, new_y) == 1) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
+        return 0;
     }
 };
 const string Queen::QueenName = "Королева";

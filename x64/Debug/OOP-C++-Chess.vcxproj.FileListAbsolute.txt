@@ -1,1 +1,2 @@
 F:\Study\Задачи c++\Двусвязные списки\OOP-C++-Chess\x64\Debug\OOP-C++-Chess-app.exe
+F:\Study\GitHub\OOP-Chess\x64\Debug\OOP-C++-Chess-app.exe
